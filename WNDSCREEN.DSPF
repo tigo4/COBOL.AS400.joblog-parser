@@ -1,0 +1,45 @@
+     A*%%TS  SD  20110430  174809  TMS         REL-V5R3M0  5722-WDS
+      * @
+      * devsoftprog.AS400.joblog-parser
+      * Copyright (c) 2011,2012,2013 tigo
+      * MIT License (MIT)
+      * @
+      * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+      * THE SOFTWARE.
+      * @
+      *         change log:
+      *
+      *                 Apr2011
+      *
+      * @
+      *
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      CF03(03)
+     A                                      HELP
+     A          R RSFL                      SFL
+     A*%%TS  SD  20110430  174155  TMS         REL-V5R3M0  5722-WDS
+     A            MSGLINES1     76A  O  3  1
+     A            MSGLINES2     62A  O  4  6
+     A          R RSFLCTL                   SFLCTL(RSFL)
+     A*%%TS  SD  20110430  010105  TMS         REL-V5R3M0  5722-WDS
+     A                                      SFLSIZ(0007)
+     A                                      SFLPAG(0006)
+     A                                      WINDOW(4 1 17 76)
+     A                                      OVERLAY
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  34                                  SFLCLR
+     A  33                                  SFLEND(*MORE)
+     A                                      SFLDROP(CA15)
+     A            RRN            4S 0H      SFLRCDNBR
+     A            SMSGID    R        O  1 35REFFLD(RJOBLOGF/MSGID *LIBL/JOBLOGF)
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)

@@ -1,0 +1,120 @@
+     A*%%TS  SD  20111228  021246  TMS         REL-V5R3M0  5722-WDS
+      * @
+      * devsoftprog.AS400.joblog-parser
+      * Copyright (c) 2011,2012,2013 tigo
+      * MIT License (MIT)
+      * @
+      * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+      * THE SOFTWARE.
+      * @
+      *         change log:
+      *
+      *                 Apr2011
+      *
+      * @
+      *
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      PRINT
+     A                                      INDARA
+     A                                      CF03(03)
+     A                                      CF17(17)
+     A                                      CF18(18)
+     A                                      HELP
+     A          R HEADER
+     A*%%TS  SD  20111228  021246  TMS         REL-V5R3M0  5722-WDS
+     A                                      OVERLAY
+     A                                  2 70DATE
+     A                                      EDTWRD('  /  /  ')
+     A                                  3 70TIME
+     A                                      EDTWRD('  :  :  ')
+     A                                  2  3'MSFLSCREEN'
+     A                                  2 31'AS400.joblog-parser 1.0 2012'
+     A                                      DSPATR(RI)
+     A                                      DSPATR(HI)
+     A                                  3 25' '
+     A                                      DSPATR(UL)
+     A                                      DSPATR(HI)
+     A          R RSFL                      SFL
+     A*%%TS  SD  20110501  001416  TMS         REL-V5R3M0  5722-WDS
+     A            SEQ       R    5   O  7  9REFFLD(RJOBLOGF/SEQ *LIBL/JOBLOGF)
+     A            MSGID     R        O  7 15REFFLD(RJOBLOGF/MSGID *LIBL/JOBLOGF)
+     A            MSGTYP    R    5   O  7 23REFFLD(RJOBLOGF/MSGTYP *LIBL/JOBLOG-
+     A                                      F)
+     A            MSGSEV    R        O  7 29REFFLD(RJOBLOGF/MSGSEV *LIBL/JOBLOG-
+     A                                      F)
+     A            MSGDATE   R        O  7 32REFFLD(RJOBLOGF/MSGDATE *LIBL/JOBLO-
+     A                                      GF)
+     A            MSGHORA   R        O  7 41REFFLD(RJOBLOGF/MSGHORA *LIBL/JOBLO-
+     A                                      GF)
+     A            MSGTSEQ   R        O  7 50REFFLD(RJOBLOGF/MSGTSEQ *LIBL/JOBLO-
+     A                                      GF)
+     A            FROMPGM   R        O  7 57REFFLD(RJOBLOGF/FROMPGM *LIBL/JOBLO-
+     A                                      GF)
+     A            MSGTOPGM  R        O  7 68REFFLD(RJOBLOGF/MSGTOPGM *LIBL/JOBL-
+     A                                      OGF)
+     A            OPT            1A  B  7  7
+     A            FROMPGMLIBR        O  8 20REFFLD(RJOBLOGF/FROMPGMLIB *LIBL/JO-
+     A                                      BLOGF)
+     A            MSGTOPGLIBR        O  8 56REFFLD(RJOBLOGF/MSGTOPGLIB *LIBL/JO-
+     A                                      BLOGF)
+     A            TOPGMINS  R        O  8 73REFFLD(RJOBLOGF/TOPGMINS *LIBL/JOBL-
+     A                                      OGF)
+     A            FROMPGMINSR        O  8 37REFFLD(RJOBLOGF/FROMPGMINS *LIBL/JO-
+     A                                      BLOGF)
+     A                                  8  8'FROMPGMLIB:'
+     A                                  8 31'INST:'
+     A                                  8 46'TOPGMLIB:'
+     A                                  8 67'INST:'
+     A          R RSFLCTL                   SFLCTL(RSFL)
+     A*%%TS  SD  20110501  001416  TMS         REL-V5R3M0  5722-WDS
+     A                                      SFLSIZ(9999)
+     A                                      SFLPAG(0008)
+     A                                      OVERLAY
+     A                                      SFLDROP(CA15)
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLEND(*MORE)
+     A  34                                  SFLCLR
+     A            RRN            4S 0H      SFLRCDNBR
+     A                                  6 15' MSGID '
+     A                                      DSPATR(UL)
+     A                                      DSPATR(HI)
+     A                                  6  9' SEQ '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                  6 23' TYP '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                  6 29'SV'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                  6 32'MSGDATE '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                  6 41'  HOUR  '
+     A                                      DSPATR(UL)
+     A                                      DSPATR(HI)
+     A                                  6 50' TSEQ '
+     A                                      DSPATR(UL)
+     A                                      DSPATR(HI)
+     A                                  6 57' FROMPGM  '
+     A                                      DSPATR(UL)
+     A                                      DSPATR(HI)
+     A                                  6 68'  TOPGM   '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                  6  7'X'
+     A                                      DSPATR(UL)
+     A          R FOOTER
+     A*%%TS  SD  20110501  231506  TMS         REL-V5R3M0  5722-WDS
+     A                                      OVERLAY
+     A                                 24  3'F3=Exit'
+     A                                 24 13'F15=Extra info'
+     A                                 24 30'F17=Top'
+     A                                 24 40'F18=Bottom'

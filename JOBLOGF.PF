@@ -1,0 +1,38 @@
+      * @
+      * devsoftprog.AS400.joblog-parser
+      * Copyright (c) 2011,2012,2013 tigo
+      * MIT License (MIT)
+      * @
+      * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+      * THE SOFTWARE.
+      * @
+      *         change log:
+      *
+      *                 Apr2011
+      *
+      * @
+      *
+     A                                      UNIQUE
+     A          R RJOBLOGF                  TEXT('JOB MSG LIST')
+      *
+     A            SEQ           10  0       COLHDG('SEQ        ')
+     A            MSGID          7A         COLHDG('MSGID      ')
+     A            MSGTYP        24A         COLHDG('MSGTYP     ')
+     A            MSGSEV         2A         COLHDG('MSGSEV     ')
+     A            MSGDATE        8A         COLHDG('MSGDATE    ')
+     A            MSGHORA        8A         COLHDG('MSGHORA    ')
+     A            MSGTSEQ        6A         COLHDG('MSGTSEQ    ')
+     A            FROMPGM       10A         COLHDG('FORMPGM    ')
+     A            FROMPGMLIB    10A         COLHDG('FROMPGMLIB ')
+     A            FROMPGMINS     7A         COLHDG('FROMPGMINS ')
+     A            MSGTOPGM      10A         COLHDG('MSGTOPGM   ')
+     A            MSGTOPGLIB    10A         COLHDG('MSGTOPGMLIB')
+     A            TOPGMINS       7A         COLHDG('TOPGMINS   ')
+      *
+     A          K SEQ
+      *

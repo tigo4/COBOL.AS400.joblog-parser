@@ -1,0 +1,82 @@
+     A*%%TS  SD  20111228  020813  TMS         REL-V5R3M0  5722-WDS
+      * @
+      * devsoftprog.AS400.joblog-parser
+      * Copyright (c) 2011,2012,2013 tigo
+      * MIT License (MIT)
+      * @
+      * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+      * THE SOFTWARE.
+      * @
+      *         change log:
+      *
+      *                 Apr2011
+      *
+      * @
+      *
+     A*%%EC
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDARA
+     A                                      PRINT
+     A                                      CF03(03)
+     A                                      HELP(01)
+     A          R RMAINSCR
+     A*%%TS  SD  20111228  020813  TMS         REL-V5R3M0  5722-WDS
+     A                                      OVERLAY
+     A                                  2 70DATE
+     A                                      EDTWRD('  /  /  ')
+     A                                  3 70TIME
+     A                                      EDTWRD('  :  :  ')
+     A                                  2  3'MAINSCREEN'
+     A                                  2 29'AS400.joblog-parser v1.0 2012'
+     A                                      DSPATR(HI)
+     A                                      DSPATR(RI)
+     A                                  3 29'Copyright (c) 2011, 2012,2013 tigo'
+     A                                 11 27'job nr . . .:'
+     A                                  9 25'job name . . .:'
+     A                                  7 14'spool log file name . . .:'
+     A            SFROMFILE     10A  B  7 41
+     A  71                                  DSPATR(RI)
+     A            SJOBNAME      10A  B  9 41
+     A  72                                  DSPATR(RI)
+     A            SJOBNBR       10A  B 11 41
+     A  73                                  DSPATR(RI)
+     A            SFILENBR      10A  B 13 41
+     A  74                                  DSPATR(RI)
+     A                                 13 22'file number . . .:'
+     A                                 13 53'(optional - req. only for '
+     A                                 14 54'multiple job files  '
+     A                                 15 54'with same name)'
+     A                                 16 13'required fields,
+     A                                        WRKSPLF view - F11'
+     A                                  4 10'THE SOFTWARE IS PROVIDED
+     A                                        "AS IS", WITHOUT WARRANTY OF
+     A                                        ANY KIND, EXPRESS OR IMPLIED,
+     A                                        INCLUDING BUT NOT LIMITED TO
+     A                                        THE WARRANTIES OF
+     A                                        MERCHANTABILITY, FITNESS FOR
+     A                                        A PARTICULAR PURPOSE AND
+     A                                        NONINFRINGEMENT.'
+     A                                 17 10'IN NO EVENT SHALL THE
+     A                                        AUTHORS OR COPYRIGHT HOLDERS
+     A                                        BE LIABLE FOR ANY CLAIM,
+     A                                        DAMAGES OR OTHER LIABILITY,
+     A                                        WHETHER IN AN ACTION OF
+     A                                        CONTRACT, TORT OR OTHERWISE,
+     A                                        ARISING FROM, OUT OF OR IN
+     A                                        CONNECTION WITH THE SOFTWARE
+     A                                        OR THE USE OR OTHER DEALINGS
+     A                                        IN THE SOFTWARE.'
+     A                                 22  3'F3=Exit'
+     A                                  3 25' '
+     A                                      DSPATR(HI)
+     A                                      DSPATR(UL)
+     A                                 22 51'data required'
+     A N71N72N73                            DSPATR(ND)
+     A            MSG           50A  O 21 28DSPATR(RI)
+     A N70                                  DSPATR(ND)
+     A                                  7 54'QPJOBLOG format'
