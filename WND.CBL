@@ -92,7 +92,7 @@
                 AT END SET EOFFILE TO TRUE
             END-READ.
             PERFORM UNTIL EOFFILE
-               IF SEQ1 = PSEQ
+               IF SEQ = PSEQ
                   MOVE 1 TO FIRSTCHAR
                   PERFORM VARYING I FROM 1 BY 1
                    UNTIL I > LENGTH OF MSGLINES OR FIRSTCHAR > 1
