@@ -13,12 +13,13 @@ THE SOFTWARE.
 @
 IBM AS/400 V5R3M0
 @
-	change log:
 
-		Oct2012 1.0
-		Apr2011
+    load files:
 
-@
+    upload by ftp to AS400 then for each file:
+    CPYFRMSTMF TOMBR('/QSYS.LIB/<USER>.LIB/<PROJECT>.FILE/<MEMBER>.MBR') +
+        FROMSTMF('/ftp/home/<project>/<FILE>.<EXTENSION>')
+
 	build:
 
 		compile CLP program MAKE
